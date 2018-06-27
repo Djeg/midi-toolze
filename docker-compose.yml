@@ -1,0 +1,23 @@
+version: '3.5'
+
+services:
+  app:
+    image: 'node:9'
+    tty: true
+    environment:
+      - SHELL=/bin/bash
+      - SERVER_PORT=9876
+      - MONGO_DSN='mongodb://knplabs:knplabs@mongo:27017'
+    volumes:
+      - './:/app'
+    ports:
+      - '9876:9876'
+    working_dir: '/app'
+    user: '1000'
+    command: 'npm start'
+
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: knplabs
+      MONGO_INITDB_ROOT_PASSWORD: knplabs

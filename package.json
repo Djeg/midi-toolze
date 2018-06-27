@@ -1,0 +1,22 @@
+{
+  "name": "midi-toolze",
+  "version": "1.0.0",
+  "description": "The midi generator you need!",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape -r esm src/**/*.spec.js | tap-spec",
+    "start": "node -r esm index.js",
+    "test:dev": "npm test && chokidar src/**/*.js -c 'tape -r esm {path} | tap-spec'"
+  },
+  "author": "David Jegat <david.jegat@knplabs.com>",
+  "license": "MIT",
+  "dependencies": {
+    "esm": "^3.0.55",
+    "ramda": "^0.25.0"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^1.2.0",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.1"
+  }
+}
